@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=https://kortix.com/schema/kortix.v2.schema.json
+# Kortix is open source. A manifest is a file in the git repo you own.
+kortix_version: 2
+
+# A session that names no agent starts this one.
+default_agent: migrate-one-vellum-workflow
+
+# For people who read the repository. The project name in Kortix does not come from here.
+project:
+  name: vellum-alternative-starter
+  description: Move one Vellum workflow into a Kortix agent, reviewed by a person.
+
+# Secret NAMES only. A value never sits in the repo. Set it with `kortix secrets set`.
+env:
+  optional:
+    - OPENAI_API_KEY
+    - ANTHROPIC_API_KEY
+
+agents:
+  migrate-one-vellum-workflow:
+    # Behavior lives in the markdown file; this block is governance.
+    file: agents/migrate-one-vellum-workflow.md
+    # `all` reaches every declared connector. Narrow it to named slugs once your
+    # inventory is done.
+    connectors: all
+    secrets: all
+    skills: all
+    # The merge grant is left out on purpose: no agent merges its own change
+    # request here, so a person reviews and merges it. Add `project.gitops.merge`
+    # only when you want an agent to merge.
+
+# One schedule, so a migrated workflow can also run with nobody present.
+triggers:
+  - slug: weekly-inventory
+    type: cron
+    agent: migrate-one-vellum-workflow
+    cron: "0 0 9 * * 1"
+    prompt: Refresh the Vellum workflow inventory and open a change request with the diff.
+
+# Approval gates are off until you set them. `risk` asks before a risky call.
+# Validate the file before you push: `kortix validate`.
+policy:
+  default_mode: risk
