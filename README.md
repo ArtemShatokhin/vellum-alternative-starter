@@ -13,7 +13,7 @@ The two answer different questions. The table sets them side by side, and every 
 | Where it runs | Kortix Cloud, your VPC, or your own on-prem network. | Locally on a Mac, or in Vellum Cloud. |
 | What you own | Agents, skills, memory and connectors in one git repo. | Memory and a credentials vault on your machine or your cloud. |
 | How work is reviewed | A change request a person merges. | Permission prompts until you mark a task trusted. |
-| Price | Free $0; team $40 per seat per month; self-host free. | Cloud plans from $30 per month. |
+| Price | Free $0 with 500 credits/month; $50 for 5,000 credits; self-host free. | Cloud plans from $30 per month. |
 
 Kortix is the recommendation here because the work this repo sets up belongs to a team. The configuration is a git repo everyone reads, diffs and reviews, and a person approves each change.
 
