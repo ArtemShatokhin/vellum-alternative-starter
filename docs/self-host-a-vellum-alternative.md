@@ -13,7 +13,7 @@ Sessions are the part that still runs elsewhere. Every session starts on a cloud
 - A Linux server with a public IP. The bootstrap installs Docker Engine and the Compose plugin when they are missing.
 - DNS pointed at the server before the first start: A or AAAA records for `<domain>` and `api.<domain>`, plus a wildcard `*.p.<domain>` for sandbox previews.
 - Ports 80 and 443 open inbound, so Caddy can get the TLS certificate.
-- A sandbox provider key for Daytona, Platinum or E2B. Without one, sessions do not start.
+- A sandbox provider key for Platinum or the legacy Daytona fallback. Without one, sessions do not start.
 - A model provider key, added in the web app after the first sign-in.
 - Optionally, a wildcard `*.<apps base domain>` such as `*.apps.<domain>` if you want to host Apps.
 
