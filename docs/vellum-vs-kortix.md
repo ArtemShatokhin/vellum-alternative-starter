@@ -12,7 +12,7 @@ The difference is scope. Vellum keeps one person's assistant, its memory, and it
 
 ## Where each one runs
 
-Kortix runs on Kortix Cloud, in your VPC, or on your own on-prem network, and self-host is free. The [Kortix self-hosting guide](https://kortix.com/docs/host) describes a self-hosted instance as one Docker Compose stack the `kortix self-host` CLI installs, configures and updates. Sessions are the one part that runs elsewhere: they start on a cloud sandbox provider (Daytona, Platinum or E2B), and the instance must be reachable so those sandboxes can call back.
+Kortix runs on Kortix Cloud, in your VPC, or on your own on-prem network, and self-host is free. The [Kortix self-hosting guide](https://kortix.com/docs/host) describes a self-hosted instance as one Docker Compose stack the `kortix self-host` CLI installs, configures and updates. Sessions are the one part that runs elsewhere: they start on a cloud sandbox provider (Platinum or the legacy Daytona fallback), and the instance must be reachable so those sandboxes can call back.
 
 Vellum runs its assistant locally on your machine or in Vellum Cloud, according to its [homepage](https://www.vellum.ai/). Its [pricing page](https://www.vellum.ai/pricing) says you can deploy the assistant on your own hardware, a VPS, or a private cloud. The homepage lists Mac as native, with iOS, Android, web, voice, email, Telegram, Slack and terminal as ways to reach the same assistant.
 
